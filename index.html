@@ -215,55 +215,65 @@
                     </div>
                     <div class="space-y-4 text-sm">
                         <!-- Header -->
-                        <div class="grid grid-cols-12 gap-x-2 font-bold text-slate-500 text-xs text-center border-b border-slate-200 pb-2">
-                            <div class="col-span-3 text-left">Deliverable / Workstream</div>
-                            <div class="col-span-2">Weeks 1-2</div>
-                            <div class="col-span-4">Weeks 3-6</div>
-                            <div class="col-span-3">Weeks 7-10</div>
+                        <div class="grid grid-cols-12 gap-x-4 font-bold text-slate-500 text-xs text-center border-b border-slate-200 pb-2">
+                            <div class="col-span-3 text-left">Deliverable</div>
+                            <div class="col-span-2 bg-slate-100/70 p-1 rounded-t-md">Phase 1 (2 Wks)</div>
+                            <div class="col-span-4 bg-slate-100/70 p-1 rounded-t-md">Phase 2 (4 Wks)</div>
+                            <div class="col-span-3 bg-slate-100/70 p-1 rounded-t-md">Phase 3 (4 Wks)</div>
                         </div>
 
-                        <!-- Foundational Planning -->
-                        <div class="grid grid-cols-12 gap-x-2 items-center">
-                            <div class="col-span-3 font-semibold text-slate-700">Foundational Planning</div>
-                            <div class="col-span-2 p-2">
-                                <div class="bg-indigo-500 h-4 rounded-full" title="Program Charter, Detailed Work Plan"></div>
+                        <!-- Row 1: Charter -->
+                        <div class="grid grid-cols-12 gap-x-4 items-center py-1">
+                            <div class="col-span-3 font-semibold text-slate-700">Program Charter & Detailed Plan</div>
+                            <div class="col-span-2 p-1">
+                                <div class="bg-indigo-500 h-5 rounded-md w-full" title="Weeks 1-2: Finalize Charter and detailed work plan."></div>
                             </div>
                             <div class="col-span-7"></div>
                         </div>
 
-                        <!-- Process & Documentation -->
-                        <div class="grid grid-cols-12 gap-x-2 items-center">
-                            <div class="col-span-3 font-semibold text-slate-700">Process & Documentation</div>
+                        <!-- Row 2: Docs -->
+                        <div class="grid grid-cols-12 gap-x-4 items-center py-1">
+                            <div class="col-span-3 font-semibold text-slate-700">Runbooks, RACI, Playbooks</div>
                              <div class="col-span-2"></div>
-                            <div class="col-span-4 p-2">
-                                <div class="bg-sky-500 h-4 rounded-full" title="Runbook v2, RACI, Playbooks, On-Call Model"></div>
+                            <div class="col-span-4 p-1">
+                                <div class="bg-sky-500 h-5 rounded-md w-full" title="Weeks 3-6: Draft and finalize core process documentation."></div>
                             </div>
                             <div class="col-span-3"></div>
                         </div>
 
-                         <!-- Tooling & Data -->
-                        <div class="grid grid-cols-12 gap-x-2 items-center">
-                            <div class="col-span-3 font-semibold text-slate-700">Tooling & Data</div>
+                        <!-- Row 3: Tooling Specs -->
+                        <div class="grid grid-cols-12 gap-x-4 items-center py-1">
+                            <div class="col-span-3 font-semibold text-slate-700">BRB Requirements & Taxonomy</div>
                              <div class="col-span-2"></div>
-                            <div class="col-span-7 p-2">
-                                 <div class="bg-amber-500 h-4 rounded-full" title="BRB Enhancements, Taxonomy, Dashboard Build"></div>
+                            <div class="col-span-4 p-1">
+                               <div class="bg-amber-500 h-5 rounded-md w-full" title="Weeks 3-6: Define and document requirements for tooling enhancements."></div>
+                            </div>
+                             <div class="col-span-3"></div>
+                        </div>
+
+                         <!-- Row 4: Tooling Build -->
+                        <div class="grid grid-cols-12 gap-x-4 items-center py-1">
+                            <div class="col-span-3 font-semibold text-slate-700">Hubble Dashboard v2 Build</div>
+                            <div class="col-span-4"></div>
+                            <div class="col-span-5 p-1">
+                                 <div class="bg-amber-500 h-5 rounded-md w-full" title="Weeks 5-9: Build and validate the new Hubble dashboard."></div>
                             </div>
                         </div>
 
-                        <!-- Rollout & Adoption -->
-                        <div class="grid grid-cols-12 gap-x-2 items-center">
-                            <div class="col-span-3 font-semibold text-slate-700">Rollout & Adoption</div>
+                        <!-- Row 5: Rollout -->
+                        <div class="grid grid-cols-12 gap-x-4 items-center py-1">
+                            <div class="col-span-3 font-semibold text-slate-700">Training & Go-Live</div>
                             <div class="col-span-6"></div>
-                            <div class="col-span-3 p-2">
-                                <div class="bg-teal-500 h-4 rounded-full" title="Training, Go-Live"></div>
+                            <div class="col-span-3 p-1">
+                                <div class="bg-teal-500 h-5 rounded-md w-full" title="Weeks 7-10: Conduct training and launch the program."></div>
                             </div>
                         </div>
                         
-                         <!-- Iteration -->
-                        <div class="grid grid-cols-12 gap-x-2 items-center">
+                         <!-- Row 6: Iteration -->
+                        <div class="grid grid-cols-12 gap-x-4 items-center pt-2 mt-2 border-t border-slate-200">
                             <div class="col-span-3 font-semibold text-slate-700">Embed & Iterate</div>
                             <div class="col-span-9"></div>
-                            <div class="col-span-3 text-xs text-center font-semibold text-slate-500">Ongoing →</div>
+                            <div class="col-span-3 text-xs text-right font-semibold text-slate-500 -translate-y-2">Ongoing →</div>
                         </div>
                     </div>
                 </div>

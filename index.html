@@ -6,7 +6,7 @@
     <title>PE&O Incident Response Program</title>
     <!-- Chosen Palette: Slate & Indigo -->
     <!-- Application Structure Plan: The SPA is redesigned as an interactive slide deck. This structure was chosen to guide the audience through a linear, step-by-step narrative, which is more effective for a formal kick-off presentation than a free-form dashboard. Each major section of the plan is now a self-contained slide, with navigation controls (top nav, prev/next buttons, keyboard arrows) to move between them. This focuses attention on one topic at a time. -->
-    <!-- Visualization & Content Choices: Content is preserved from the previous version, but now presented within a slide-based format. The "Path Forward" slide has been updated from a simple list to a Gantt-style chart built with CSS Grid to visually represent the project timeline and key deliverables across phases. This enhances clarity and provides a professional project overview. The goal is a controlled narrative flow. -->
+    <!-- Visualization & Content Choices: Content is preserved from the previous version, but now presented within a slide-based format. The "Path Forward" slide has been updated to include both high-level phase cards and a more detailed Gantt-style chart to visually represent the project timeline and key deliverables across phases. This enhances clarity and provides a professional project overview. The goal is a controlled narrative flow. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -210,16 +210,42 @@
             <!-- Slide 5: Path Forward -->
             <div id="slide-5" class="slide justify-center">
                 <div class="w-full">
-                    <div class="text-center mb-8">
+                    <div class="text-center mb-10">
                         <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight">The Path Forward: Initial Work Plan</h2>
                     </div>
+                    
+                    <!-- Phase Cards -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-center">
+                            <h3 class="font-bold text-indigo-600">Phase 1</h3>
+                            <p class="text-sm font-semibold text-slate-500">2 Weeks</p>
+                            <p class="text-xs text-slate-600 mt-1">Foundation & Discovery</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-center">
+                            <h3 class="font-bold text-sky-600">Phase 2</h3>
+                            <p class="text-sm font-semibold text-slate-500">4 Weeks</p>
+                            <p class="text-xs text-slate-600 mt-1">Design & Documentation</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-center">
+                            <h3 class="font-bold text-amber-600">Phase 3</h3>
+                            <p class="text-sm font-semibold text-slate-500">4 Weeks</p>
+                            <p class="text-xs text-slate-600 mt-1">Implementation</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 text-center">
+                             <h3 class="font-bold text-teal-600">Phase 4</h3>
+                            <p class="text-sm font-semibold text-slate-500">Ongoing</p>
+                            <p class="text-xs text-slate-600 mt-1">Embed & Iterate</p>
+                        </div>
+                    </div>
+
+                    <!-- Gantt Chart -->
                     <div class="space-y-4 text-sm">
                         <!-- Header -->
                         <div class="grid grid-cols-12 gap-x-4 font-bold text-slate-500 text-xs text-center border-b border-slate-200 pb-2">
                             <div class="col-span-3 text-left">Deliverable</div>
-                            <div class="col-span-2 bg-slate-100/70 p-1 rounded-t-md">Phase 1 (2 Wks)</div>
-                            <div class="col-span-4 bg-slate-100/70 p-1 rounded-t-md">Phase 2 (4 Wks)</div>
-                            <div class="col-span-3 bg-slate-100/70 p-1 rounded-t-md">Phase 3 (4 Wks)</div>
+                            <div class="col-span-2">Weeks 1-2</div>
+                            <div class="col-span-4">Weeks 3-6</div>
+                            <div class="col-span-3">Weeks 7-10</div>
                         </div>
 
                         <!-- Row 1: Charter -->

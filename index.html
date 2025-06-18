@@ -7,9 +7,9 @@
     <!-- Chosen Palette: Slate & Indigo -->
     <!-- Application Structure Plan: The SPA is designed as a single-page interactive dashboard with a sticky top navigation bar. This structure was chosen over a linear slide deck to empower users to freely explore the program details at their own pace. Stakeholders can immediately jump to the sections most relevant to them (e.g., "The How" for deliverables, "The Path Forward" for timelines), which is a more efficient and user-centric way to consume complex project information. Key interactions, like the interactive timeline and metrics chart, are designed to draw the user in and provide deeper context on demand. -->
     <!-- Visualization & Content Choices: 
-        - Opportunity Section ('Why'): Report Info -> Challenges vs Opportunities. Goal -> Persuade. Viz -> Side-by-side card layout with specific, actionable bullet points. Interaction -> None. Justification -> Visual contrast with concrete examples is powerful for showing the 'before' and 'after' potential. Method -> HTML/Tailwind.
-        - Success Metrics ('How'): Report Info -> TTM, Tagging Accuracy, etc. plus BRB data hygiene. Goal -> Compare/Inform. Viz -> Key Stat Cards and a Bar Chart with specific, measurable goals. Interaction -> Chart animation on load, tooltips on hover. Justification -> A chart makes the quantitative goals tangible and easier to grasp than text alone. Library -> Chart.js on Canvas.
-        - Work Plan ('Path Forward'): Report Info -> 4-phase plan. Goal -> Show Process/Change over time. Viz -> Interactive horizontal timeline with specific tasks per phase. Interaction -> Clicking a phase reveals its detailed action items. Justification -> This is more engaging than a static list and allows users to focus on one phase at a time without being overwhelmed. Method -> HTML/CSS/JS.
+        - Opportunity Section ('Why'): Report Info -> Strategic Challenges vs Opportunities. Goal -> Persuade. Viz -> Side-by-side card layout with refined, strategic bullet points. Interaction -> None. Justification -> Visual contrast is powerful for showing the 'before' and 'after' potential. Method -> HTML/Tailwind.
+        - Success Metrics ('How'): Report Info -> Baseline-focused metrics. Goal -> Inform/Set Expectations. Viz -> Detailed descriptive cards. Interaction -> None. Justification -> The primary goal is establishing measurement capability, not hitting arbitrary numbers, so descriptive text is more appropriate than a chart in this version. Method -> HTML/Tailwind.
+        - Work Plan ('Path Forward'): Report Info -> 4-phase plan. Goal -> Show Process/Change over time. Viz -> Interactive horizontal timeline with specific tasks per phase. Interaction -> Clicking a phase reveals its detailed action items. Justification -> This is more engaging than a static list and allows users to focus on one phase at a time. Method -> HTML/CSS/JS.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,23 +22,13 @@
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* slate-50 */
         }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 50vh;
-        }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <nav class="container mx-auto px-4 lg:px-6 py-3 flex justify-between items-center">
-            <h1 class="text-lg font-bold text-slate-800">PE&O Incident Response</h1>
+            <h1 class="text-lg font-bold text-slate-800">PE&O Incident Response Program</h1>
             <div class="hidden md:flex items-center space-x-2 lg:space-x-4 text-sm font-medium">
                 <a href="#why" class="text-slate-600 hover:text-indigo-600 transition-colors px-3 py-2 rounded-md">The "Why"</a>
                 <a href="#what" class="text-slate-600 hover:text-indigo-600 transition-colors px-3 py-2 rounded-md">The "What"</a>
@@ -52,264 +42,187 @@
 
     <main class="container mx-auto px-4 py-8 lg:py-16">
 
-        <!-- 1. The Why: Our Opportunity -->
         <section id="why" class="mb-24 scroll-mt-20">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The "Why": Fixing What's Broken</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Our current processes are manual and inconsistent, leading to wasted time and unreliable data. This program will fix these specific, daily frustrations and build a foundation we can trust.</p>
+                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The “Why”: Our Opportunity</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">Our current incident response model has served us to this point, but as we scale, we have a clear opportunity to evolve. By addressing our current state, we can unlock significant improvements in efficiency, data quality, and proactive partner management.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h3 class="text-lg font-bold text-indigo-600 mb-3">Tackle Inconsistent Data</h3>
-                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Partner names are messy (e.g., "JPM", "JP Morgan", "JPMC").</li>
-                        <li>It's hard to tell if an incident is partner-induced vs. Stripe-caused.</li>
-                        <li>We can't easily filter by which partner service is impacted (e.g., acquiring, issuing, treasury).</li>
-                    </ul>
+            <div class="space-y-8 max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-4 bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <div>
+                        <h3 class="font-semibold text-red-600 mb-2">The Challenge:</h3>
+                        <p class="text-slate-600">Our processes are fragmented and inconsistent across teams, leading to increased manual toil and impacting the quality of incident resolution.</p>
+                    </div>
+                    <div class="border-t md:border-t-0 md:border-l border-slate-200 mt-4 pt-4 md:mt-0 md:pt-0 md:pl-4">
+                        <h3 class="font-semibold text-green-600 mb-2">The Opportunity:</h3>
+                        <p class="text-slate-600">To create a single, standardized playbook that ensures everyone knows their role and can execute flawlessly, reducing our time to mitigation.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h3 class="text-lg font-bold text-indigo-600 mb-3">Reduce Manual Toil</h3>
-                     <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>PE&O DRIs are not automatically added to relevant incident channels.</li>
-                        <li>Incident responders have to manually tag incidents as "partner-induced."</li>
-                         <li>Prepping for QBRs requires manually digging through incidents instead of using a dashboard.</li>
-                    </ul>
+                <div class="grid md:grid-cols-2 gap-4 bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <div>
+                        <h3 class="font-semibold text-red-600 mb-2">The Challenge:</h3>
+                        <p class="text-slate-600">We struggle with unreliable data. Our current labels lack the granularity to distinguish between key incident types (like <span class="italic">Stripe-induced, partner-facing</span>) or to capture critical details like impacted partner functionality.</p>
+                    </div>
+                    <div class="border-t md:border-t-0 md:border-l border-slate-200 mt-4 pt-4 md:mt-0 md:pt-0 md:pl-4">
+                        <h3 class="font-semibold text-green-600 mb-2">The Opportunity:</h3>
+                        <p class="text-slate-600">To drive targeted enhancements to our BRB tooling, the widely-adopted source of truth for incidents. By improving data capture within BRB, we can empower teams with reliable insights to identify trends, measure performance, and make data-driven decisions.</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h3 class="text-lg font-bold text-indigo-600 mb-3">Clarify Ambiguous Processes</h3>
-                     <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
-                        <li>Roles for IRM vs. PE&O vs. Eng are unclear during partner escalations.</li>
-                        <li>No clear process for handling long-running "active" incidents waiting on other teams.</li>
-                         <li>Unclear when to shut off a payment method during a partner maintenance or outage.</li>
-                    </ul>
+                <div class="grid md:grid-cols-2 gap-4 bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <div>
+                        <h3 class="font-semibold text-red-600 mb-2">The Challenge:</h3>
+                        <p class="text-slate-600">We are often in a reactive mode, fighting fires as they arise rather than preventing them.</p>
+                    </div>
+                    <div class="border-t md:border-t-0 md:border-l border-slate-200 mt-4 pt-4 md:mt-0 md:pt-0 md:pl-4">
+                        <h3 class="font-semibold text-green-600 mb-2">The Opportunity:</h3>
+                        <p class="text-slate-600">To shift to a proactive stance on risk. By leveraging our data, we can identify systemic issues and engage partners to improve their reliability before they cause major incidents.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. The What: Vision & Goals -->
         <section id="what" class="mb-24 scroll-mt-20">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The "What": Our Vision & Goals</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">This section outlines the program's guiding vision and the four core goals that will solve the problems we just outlined.</p>
+                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The “What”: Program Vision & Goals</h2>
             </div>
             <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 mb-8">
                 <h3 class="text-center text-xl font-bold text-slate-800 mb-2">Our Vision</h3>
-                <p class="text-center text-lg text-slate-600 max-w-3xl mx-auto">To build a world-class incident response program that transforms how we manage partner incidents, moving from reactive firefighting to proactive, data-driven excellence.</p>
+                <p class="text-center text-lg text-slate-600 max-w-3xl mx-auto">To create a clear, efficient, and reliable process framework for supporting the IRM team, reducing incident response toil by ensuring partner engagement is swift, consistent, and effective.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                 <div class="text-center p-6 bg-slate-100 rounded-lg">
-                    <h4 class="font-bold text-slate-700">Centralize & Scale</h4>
-                    <p class="text-sm text-slate-500 mt-1">One playbook for all of PE&O.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                 <div class="bg-slate-100 p-6 rounded-lg border border-slate-200">
+                    <h4 class="font-bold text-slate-800 text-lg">Establish a Centralized Process</h4>
+                    <p class="text-slate-600 mt-1">Develop a single, comprehensive, and well-documented process for PE&O incident support. This process must be clearly communicated to all cross-functional partners and supported by a robust on-call coverage model.</p>
                 </div>
-                <div class="text-center p-6 bg-slate-100 rounded-lg">
-                    <h4 class="font-bold text-slate-700">Establish Clear Ownership</h4>
-                     <p class="text-sm text-slate-500 mt-1">Defined RACI for every incident.</p>
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200">
+                    <h4 class="font-bold text-slate-800 text-lg">Clarify Cross-Functional Roles</h4>
+                     <p class="text-slate-600 mt-1">Define and document a clear RACI that outlines the specific responsibilities and handoffs between PE&O, IRM, Engineering, TechOps, and PDMs during an incident.</p>
                 </div>
-                <div class="text-center p-6 bg-slate-100 rounded-lg">
-                    <h4 class="font-bold text-slate-700">Become Data-Driven</h4>
-                     <p class="text-sm text-slate-500 mt-1">Automated metrics we can trust.</p>
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200">
+                    <h4 class="font-bold text-slate-800 text-lg">Enable Data-Driven Decisions</h4>
+                     <p class="text-slate-600 mt-1">Replace time-consuming manual reporting with automated dashboards. We will leverage improved data from BRB to provide reliable insights into partner performance, enabling more effective internal reviews and data-backed partner conversations.</p>
                 </div>
-                <div class="text-center p-6 bg-slate-100 rounded-lg">
-                    <h4 class="font-bold text-slate-700">Be Proactive</h4>
-                     <p class="text-sm text-slate-500 mt-1">Use data to prevent future incidents.</p>
+                <div class="bg-slate-100 p-6 rounded-lg border border-slate-200">
+                    <h4 class="font-bold text-slate-800 text-lg">Drive Proactive Risk Reduction</h4>
+                     <p class="text-slate-600 mt-1">Leverage incident data to move beyond reactive fire-fighting. We will proactively identify systemic issues and trends, and engage partners through formal improvement plans and readiness reviews to prevent future incidents.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. The How: Scope, Deliverables, & Success -->
         <section id="how" class="mb-24 scroll-mt-20">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The "How": The Action Plan</h2>
-                 <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Here are the specific actions we'll take: what's in scope, the concrete tools we will build, and the metrics we'll use to prove success.</p>
+                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The “How”: The Plan in Detail</h2>
             </div>
-            
-            <div class="grid lg:grid-cols-5 gap-8">
-                <div class="lg:col-span-2 space-y-8">
-                    <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                        <h3 class="text-xl font-bold text-slate-800 mb-4">Actionable Deliverables</h3>
-                        <ul class="space-y-3 text-slate-600">
-                            <li class="flex items-start"><span class="text-indigo-500 mr-2 text-xl">→</span><div><span class="font-semibold">New Runbook:</span> A "Partner Incident Runbook v2" with clear process steps and a RACI chart.</div></li>
-                             <li class="flex items-start"><span class="text-indigo-500 mr-2 text-xl">→</span><div><span class="font-semibold">BRB Enhancements:</span> Formal requests for automated partner tagging, a partner functionality taxonomy, and normalized partner names.</div></li>
-                            <li class="flex items-start"><span class="text-indigo-500 mr-2 text-xl">→</span><div><span class="font-semibold">V1 Dashboard:</span> An automated dashboard in Hubble to replace manual report creation for QBRs.</div></li>
-                        </ul>
-                    </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Proposed Key Deliverables</h3>
+                    <p class="text-slate-600 mb-6">To achieve our goals, we will focus on a core set of outputs. The following list serves as our proposed set of key deliverables, which will be validated and finalized during our discovery phase.</p>
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">PE&O Incident Response Program Charter</span></div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">"PE&O Partner Incident Runbook v2,"</span> establishing a cadence for regular runbook testing.</div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">Formalized RACI Matrix</span> defining roles for PE&O, IRM, Eng, TechOps, and PDMs.</div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">Prioritized List of BRB Enhancement Requests.</span></div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">Partner Functionality Taxonomy</span> to be implemented in BRB (e.g., acquiring, issuing).</div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">On-Call Coverage Model & Schedule</span> for the PE&O team.</div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">Enhanced v2.0 Incident Dashboard</span> in Hubble.</div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">Standardized 'Partner Improvement Plan' (PIP) Template.</span></div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">Seasonality & Holiday Readiness Playbook</span> for events like BFCM.</div></li>
+                        <li class="flex items-start"><span class="text-indigo-500 mr-3 mt-1 font-bold text-xl">✔</span><div><span class="font-semibold">Comprehensive Training Materials</span> for a successful program launch.</div></li>
+                    </ul>
                 </div>
 
-                <div class="lg:col-span-3 bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4">Measurable Success</h3>
-                    <p class="text-slate-600 mb-6">Our success will be measured against tangible improvements in efficiency, data hygiene, and accountability. The chart below visualizes our specific targets.</p>
-                    <div class="chart-container">
-                        <canvas id="successMetricsChart"></canvas>
+                <div class="bg-white p-8 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Defining Success: Our Approach to Measurement</h3>
+                    <p class="text-slate-600 mb-6">Our primary goal in this first phase is to build the foundation for measurement. Instead of setting arbitrary targets, we will focus on establishing clear metrics and improving data quality. Success will be measured by our ability to answer critical questions we can't answer today.</p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-slate-800">Establish Baselines for Key Timelines</h4>
+                            <p class="text-slate-600 text-sm mt-1">We will track **Time to Acknowledge (TTA)** and **Time to Notify (TTN)** for incidents with user-facing impact. Success is establishing our first-ever reliable baseline averages for these metrics.</p>
+                        </div>
+                         <div>
+                            <h4 class="font-bold text-slate-800">Achieve High-Quality Data Capture</h4>
+                            <p class="text-slate-600 text-sm mt-1">Success is a three-step process: launching the **BRB enhancements**, seeing >90% **accurate utilization** of new fields, and unlocking insights with the **Hubble v2.0 dashboard**.</p>
+                        </div>
+                         <div>
+                            <h4 class="font-bold text-slate-800">Validate Cross-Functional Clarity and Adoption</h4>
+                            <p class="text-slate-600 text-sm mt-1">Success is twofold: achieving **>80% utilization of specific partner runbooks** where applicable, and receiving **positive qualitative feedback** from IRM, Eng, and TechOps on the new, clearer process.</p>
+                        </div>
+                         <div>
+                            <h4 class="font-bold text-slate-800">Ensure Comprehensive Team Enablement and Readiness</h4>
+                            <p class="text-slate-600 text-sm mt-1">Success is when every PE&O team member can articulate the program's **strategic alignment** with SOKRs and understands their **specific responsibilities**, from runbook testing to partner communication support.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. Our Ways of Working -->
         <section id="working" class="mb-24 scroll-mt-20">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">Our Ways of Working</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">Success depends on effective collaboration. This section outlines the core team, our communication cadence, and the tools we'll use to stay aligned.</p>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">Our team's strength is its global presence. To turn our time zone differences into an advantage, we will adopt a deliberate, asynchronous-first approach. This ensures work progresses 24/7 and every team member can contribute effectively.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid lg:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">The Virtual Team</h3>
-                    <p class="text-slate-600">Led by <span class="font-semibold">Kurt Enzinger</span>. Core contributors include Liana, Adrien, Mike, and Isabela, with support from IRM, Eng, and Data Science.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Principle 1: Async by Default</h3>
+                    <p class="font-semibold text-slate-700 text-sm mb-2">How we work:</p>
+                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
+                        <li><a href="https://home.corp.stripe.com/compass/projects/pe-o-incident-management-program-readiness" target="_blank" class="text-indigo-600 hover:underline font-semibold">Compass</a> is our PM tool for milestones & status.</li>
+                        <li>Google Drive is for all collaborative work.</li>
+                        <li>Slack is for urgent coordination & weekly updates (not decisions).</li>
+                        <li>Recorded videos will be used for complex demos.</li>
+                    </ul>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Our Cadence</h3>
-                    <p class="text-slate-600">Weekly 30-minute syncs for the core team to maintain momentum, and bi-weekly updates to Leadership to ensure alignment.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Principle 2: High-Context Communication</h3>
+                    <p class="text-slate-600">Since team members will pick up work as others sign off, every update and comment must be clear and contain full context. Avoid "Done," prefer "Updated the RACI with the new workflow for your review, @Jane."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Our Tools</h3>
-                    <p class="text-slate-600">A central repository for all documentation and a dedicated Slack channel will serve as our hubs for information and communication.</p>
+                    <h3 class="text-lg font-bold text-slate-800 mb-3">Principle 3: Deliberate Cadence</h3>
+                    <p class="font-semibold text-slate-700 text-sm mb-2">How we meet:</p>
+                    <ul class="space-y-2 text-sm text-slate-600 list-disc list-inside">
+                        <li>Core sync is weekly for the first ~6 weeks, then bi-weekly.</li>
+                        <li>We will frequently rotate meeting times to share the time zone burden.</li>
+                        <li>Mandatory written updates in Slack every Friday.</li>
+                        <li>Regular updates to leadership as needed.</li>
+                    </ul>
                 </div>
             </div>
         </section>
         
-        <!-- 5. Path Forward: Work Plan -->
         <section id="path" class="mb-24 scroll-mt-20">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The Path Forward: Our Work Plan</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">We will execute this program in four distinct phases. Click on each phase below to see the specific action items for that period.</p>
+                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">The Path Forward: Initial Work Plan</h2>
             </div>
-            
-            <div class="w-full">
-                <div class="flex justify-between items-center border-b-2 border-slate-300 pb-2">
-                    <button data-phase="1" class="timeline-btn flex-1 text-center p-3 rounded-t-lg transition-colors duration-300 border-b-4 border-indigo-600 text-indigo-600 bg-indigo-50">
-                        <span class="font-bold">Phase 1</span><span class="hidden sm:inline-block"> - Foundation</span>
-                    </button>
-                    <button data-phase="2" class="timeline-btn flex-1 text-center p-3 rounded-t-lg transition-colors duration-300 border-b-4 border-transparent text-slate-500 hover:bg-slate-100">
-                        <span class="font-bold">Phase 2</span><span class="hidden sm:inline-block"> - Design</span>
-                    </button>
-                    <button data-phase="3" class="timeline-btn flex-1 text-center p-3 rounded-t-lg transition-colors duration-300 border-b-4 border-transparent text-slate-500 hover:bg-slate-100">
-                        <span class="font-bold">Phase 3</span><span class="hidden sm:inline-block"> - Implement</span>
-                    </button>
-                    <button data-phase="4" class="timeline-btn flex-1 text-center p-3 rounded-t-lg transition-colors duration-300 border-b-4 border-transparent text-slate-500 hover:bg-slate-100">
-                        <span class="font-bold">Phase 4</span><span class="hidden sm:inline-block"> - Iterate</span>
-                    </button>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 1: Foundation & Discovery</h3>
+                    <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: 2 Weeks</p>
+                    <p class="text-slate-600">Solidify the program charter, analyze historical data, map current-state pain points, and develop the detailed, full-program work plan.</p>
                 </div>
-                
-                <div class="bg-white p-8 rounded-b-xl shadow-lg border border-t-0 border-slate-200 min-h-[200px]">
-                    <div id="phase-1-content" class="phase-content">
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">Phase 1: Foundation & Discovery (2 Weeks)</h3>
-                        <ul class="space-y-2 text-slate-600 list-disc list-inside">
-                            <li>Interview PEs and TPaMs about BRB friction points.</li>
-                            <li>Analyze historical incident data to quantify impact of poor labeling.</li>
-                            <li>Map the current, "as-is" incident response workflow, including all manual steps.</li>
-                        </ul>
-                    </div>
-                    <div id="phase-2-content" class="phase-content hidden">
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">Phase 2: Design & Documentation (4 Weeks)</h3>
-                        <ul class="space-y-2 text-slate-600 list-disc list-inside">
-                            <li>Draft the v2 Runbook with a clear RACI chart for IRM vs. PE&O.</li>
-                            <li>Develop the taxonomy for "Partner Functionality" (acquiring, issuing, etc.).</li>
-                            <li>Write the formal requirements document for BRB enhancements.</li>
-                             <li>Design the V1 Hubble Dashboard mockups.</li>
-                        </ul>
-                    </div>
-                    <div id="phase-3-content" class="phase-content hidden">
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">Phase 3: Implementation & Go-Live (4 Weeks)</h3>
-                        <ul class="space-y-2 text-slate-600 list-disc list-inside">
-                            <li>Submit BRB enhancement requests to the incident reliability tooling team.</li>
-                            <li>Conduct training sessions with PE&O on the new runbook and processes.</li>
-                            <li>Work with Data Science to build and validate the V1 Hubble dashboard.</li>
-                            <li>Announce official "go-live" date for the new program.</li>
-                        </ul>
-                    </div>
-                    <div id="phase-4-content" class="phase-content hidden">
-                        <h3 class="text-xl font-bold text-slate-800 mb-3">Phase 4: Embed & Iterate (Ongoing)</h3>
-                        <ul class="space-y-2 text-slate-600 list-disc list-inside">
-                            <li>Establish and run the monthly PE&O incident review meeting using the new dashboard.</li>
-                            <li>Collect feedback via a formal survey 3 months post-launch.</li>
-                            <li>Use incident data to create proactive "Partner Improvement Plans" for repeat offenders.</li>
-                        </ul>
-                    </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 2: Design & Documentation</h3>
+                    <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: 4 Weeks</p>
+                    <p class="text-slate-600">Design the new process, define roles, and create the v2 runbook and dashboard specs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 3: Implementation & Go-Live</h3>
+                    <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: 4 Weeks</p>
+                    <p class="text-slate-600">Build the tools and dashboards, train the teams, and launch the new program.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border border-slate-200">
+                    <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 4: Embed & Iterate</h3>
+                    <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: Ongoing</p>
+                    <p class="text-slate-600">Monitor program adoption, measure success, and make continuous improvements.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 6. Q&A -->
         <section id="qa" class="scroll-mt-20">
-             <div class="text-center bg-white p-12 rounded-xl shadow-lg border border-slate-200">
-                <h2 class="text-4xl font-extrabold text-slate-800 tracking-tight">Questions & Discussion</h2>
-                <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">The floor is now open. Your feedback is crucial to making this program a success.</p>
+             <div class="text-center bg-indigo-600 text-white p-12 rounded-xl shadow-lg">
+                <h2 class="text-4xl font-extrabold tracking-tight">Questions & Discussion</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-indigo-200">The floor is now open.</p>
             </div>
         </section>
     </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('successMetricsChart').getContext('2d');
-    const successMetricsChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['TTM (Reduction)', 'Tagging Accuracy', 'Post-Mortem Completion', 'BRB Field Completion'],
-            datasets: [{
-                label: 'Target',
-                data: [15, 95, 100, 80],
-                backgroundColor: 'rgba(79, 70, 229, 0.8)', // indigo-600
-                borderColor: 'rgba(79, 70, 229, 1)',
-                borderWidth: 1,
-                borderRadius: 4,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    max: 100,
-                     ticks: {
-                        callback: function(value) { return value + '%' },
-                        color: '#64748b' // slate-500
-                    },
-                    grid: { color: '#e2e8f0' /* slate-200 */ }
-                },
-                x: {
-                   ticks: { color: '#334155' /* slate-700 */ },
-                   grid: { display: false }
-                }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            let label = context.dataset.label || '';
-                            if (label) { label += ': '; }
-                            if (context.parsed.y !== null) {
-                                label += `${context.parsed.y}% Target`;
-                            }
-                            return label;
-                        }
-                    }
-                }
-            }
-        }
-    });
-
-    const timelineBtns = document.querySelectorAll('.timeline-btn');
-    const phaseContents = document.querySelectorAll('.phase-content');
-    timelineBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const phase = btn.dataset.phase;
-            timelineBtns.forEach(b => {
-                b.classList.remove('border-indigo-600', 'text-indigo-600', 'bg-indigo-50');
-                b.classList.add('border-transparent', 'text-slate-500', 'hover:bg-slate-100');
-            });
-            btn.classList.add('border-indigo-600', 'text-indigo-600', 'bg-indigo-50');
-            btn.classList.remove('border-transparent', 'text-slate-500', 'hover:bg-slate-100');
-
-            phaseContents.forEach(content => {
-                content.classList.add('hidden');
-            });
-            document.getElementById(`phase-${phase}-content`).classList.remove('hidden');
-        });
-    });
-});
-</script>
 </body>
 </html>
-

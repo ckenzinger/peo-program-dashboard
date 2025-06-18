@@ -6,7 +6,7 @@
     <title>PE&O Incident Response Program</title>
     <!-- Chosen Palette: Slate & Indigo -->
     <!-- Application Structure Plan: The SPA is redesigned as an interactive slide deck. This structure was chosen to guide the audience through a linear, step-by-step narrative, which is more effective for a formal kick-off presentation than a free-form dashboard. Each major section of the plan is now a self-contained slide, with navigation controls (top nav, prev/next buttons, keyboard arrows) to move between them. This focuses attention on one topic at a time. -->
-    <!-- Visualization & Content Choices: Content is preserved from the previous version, but now presented within a slide-based format. The interactive timeline from the 'Path Forward' section is now a static list to better fit the slide format, simplifying the presentation while maintaining the core information. The goal is clarity and a controlled narrative flow. -->
+    <!-- Visualization & Content Choices: Content is preserved from the previous version, but now presented within a slide-based format. The interactive timeline from the 'Path Forward' section has been updated to a visual timeline to better represent the project flow, replacing the static card view. The goal is clarity and a controlled narrative flow. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -208,30 +208,55 @@
             </div>
             
             <!-- Slide 5: Path Forward -->
-            <div id="slide-5" class="slide">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight">The Path Forward: Initial Work Plan</h2>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
-                        <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 1: Foundation & Discovery</h3>
-                        <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: 2 Weeks</p>
-                        <p class="text-slate-600 text-sm">Solidify the program charter, analyze historical data, map current-state pain points, and develop the detailed, full-program work plan.</p>
+            <div id="slide-5" class="slide justify-center">
+                <div class="w-full">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-800 tracking-tight">The Path Forward: Initial Work Plan</h2>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
-                        <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 2: Design & Documentation</h3>
-                        <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: 4 Weeks</p>
-                        <p class="text-slate-600 text-sm">Design the new process, define roles, and create the v2 runbook and dashboard specs.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
-                        <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 3: Implementation & Go-Live</h3>
-                        <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: 4 Weeks</p>
-                        <p class="text-slate-600 text-sm">Build the tools and dashboards, train the teams, and launch the new program.</p>
-                    </div>
-                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
-                        <h3 class="text-lg font-bold text-indigo-600 mb-2">Phase 4: Embed & Iterate</h3>
-                        <p class="text-sm font-semibold text-slate-500 mb-3">Timeline: Ongoing</p>
-                        <p class="text-slate-600 text-sm">Monitor program adoption, measure success, and make continuous improvements.</p>
+                    <!-- Timeline Container -->
+                    <div class="relative w-full px-4">
+                        <!-- Timeline Line -->
+                        <div class="absolute left-0 top-1/2 w-full h-1 bg-slate-300 transform -translate-y-1/2"></div>
+
+                        <!-- Timeline Items -->
+                        <div class="relative flex justify-between items-center w-full">
+                            <!-- Item 1 -->
+                            <div class="w-1/4 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-indigo-600 rounded-full z-10 border-4 border-white"></div>
+                                <div class="bg-white p-4 rounded-lg shadow-lg border border-slate-200 mt-4 text-center w-full">
+                                    <h3 class="font-bold text-indigo-600">Phase 1</h3>
+                                    <p class="text-sm font-semibold text-slate-500">2 Weeks</p>
+                                    <p class="text-xs text-slate-600 mt-2">Foundation & Discovery</p>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="w-1/4 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-indigo-600 rounded-full z-10 border-4 border-white"></div>
+                                <div class="bg-white p-4 rounded-lg shadow-lg border border-slate-200 mt-4 text-center w-full">
+                                    <h3 class="font-bold text-indigo-600">Phase 2</h3>
+                                    <p class="text-sm font-semibold text-slate-500">4 Weeks</p>
+                                    <p class="text-xs text-slate-600 mt-2">Design & Documentation</p>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="w-1/4 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-indigo-600 rounded-full z-10 border-4 border-white"></div>
+                                <div class="bg-white p-4 rounded-lg shadow-lg border border-slate-200 mt-4 text-center w-full">
+                                    <h3 class="font-bold text-indigo-600">Phase 3</h3>
+                                    <p class="text-sm font-semibold text-slate-500">4 Weeks</p>
+                                    <p class="text-xs text-slate-600 mt-2">Implementation & Go-Live</p>
+                                 </div>
+                            </div>
+                            <!-- Item 4 -->
+                             <div class="w-1/4 flex flex-col items-center">
+                                <div class="w-4 h-4 bg-indigo-600 rounded-full z-10 border-4 border-white"></div>
+                                <div class="bg-white p-4 rounded-lg shadow-lg border border-slate-200 mt-4 text-center w-full">
+                                    <h3 class="font-bold text-indigo-600">Phase 4</h3>
+                                    <p class="text-sm font-semibold text-slate-500">Ongoing</p>
+                                    <p class="text-xs text-slate-600 mt-2">Embed & Iterate</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
